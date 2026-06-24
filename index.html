@@ -6,7 +6,7 @@
   <title>Portfolite Hero Recreate</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700;800&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #0a0a0e;
@@ -72,45 +72,46 @@
     .blob {
       position: absolute;
       border-radius: 50%;
-      filter: blur(110px);
-      opacity: 0.5;
+      filter: blur(160px);
+      opacity: 0.65;
       will-change: transform;
       transform: translateZ(0);
     }
 
     .blob-1 {
-      top: -180px;
-      left: -120px;
-      width: 650px;
-      height: 650px;
-      background: radial-gradient(circle, var(--blob-purple), transparent 70%);
+      top: -350px;
+      left: -300px;
+      width: 900px;
+      height: 900px;
+      background: radial-gradient(circle, #5b21b6, transparent 65%);
       animation: drift-a 14s ease-in-out infinite 0s;
     }
 
     .blob-2 {
-      top: 80px;
-      right: -120px;
-      width: 550px;
-      height: 550px;
-      background: radial-gradient(circle, var(--blob-rose), transparent 70%);
+      top: -100px;
+      right: -400px;
+      width: 1000px;
+      height: 1000px;
+      background: radial-gradient(circle, #9f1239, transparent 65%);
       animation: drift-b 18s ease-in-out infinite 2s;
     }
 
     .blob-3 {
-      bottom: -120px;
-      left: 28%;
-      width: 480px;
-      height: 480px;
-      background: radial-gradient(circle, var(--blob-blue), transparent 70%);
+      bottom: -200px;
+      left: 20%;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, #3730a3, transparent 65%);
       animation: drift-a 11s ease-in-out infinite 5s;
     }
 
     .blob-4 {
-      top: 40%;
-      right: 25%;
-      width: 380px;
-      height: 380px;
-      background: radial-gradient(circle, var(--blob-indigo), transparent 70%);
+      top: 30%;
+      left: 30%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, #2e1065, transparent 60%);
+      opacity: 0.8;
       animation: drift-b 20s ease-in-out infinite 1s;
     }
 
@@ -268,12 +269,15 @@
 
     .accent {
       display: inline-block;
-      background: linear-gradient(100deg, #ffffff 15%, #c4b5fd 48%, #f0abfc 84%);
+      background: linear-gradient(to right, #c084fc, #f472b6);
       -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       background-clip: text;
       color: transparent;
+      font-family: "Playfair Display", serif;
       font-style: italic;
-      letter-spacing: -0.08em;
+      font-weight: 700;
+      letter-spacing: -0.04em;
     }
 
     .hero-copy {
@@ -294,15 +298,16 @@
     }
 
     .btn {
-      min-height: 46px;
-      padding: 12px 28px;
+      padding: 14px 32px;
       border: 1px solid transparent;
       font-size: 14px;
     }
 
     .btn-primary {
-      background: var(--text);
-      color: var(--bg);
+      border: none;
+      background: #ffffff;
+      color: #0a0a0e;
+      font-weight: 600;
     }
 
     .btn-primary:hover {
@@ -310,9 +315,10 @@
     }
 
     .btn-secondary {
-      border-color: rgba(255, 255, 255, 0.3);
-      background: transparent;
-      color: var(--text);
+      border-color: rgba(255, 255, 255, 0.25);
+      background: #1a1a2e;
+      color: #ffffff;
+      font-weight: 500;
     }
 
     .btn-secondary:hover {
@@ -328,57 +334,57 @@
 
     .scroll-indicator {
       position: absolute;
-      bottom: 38px;
-      left: clamp(24px, 5vw, 60px);
+      left: 32px;
+      bottom: 60px;
       z-index: 2;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
       color: var(--text-faint);
       pointer-events: none;
     }
 
     .scroll-mouse {
       position: relative;
-      width: 24px;
-      height: 38px;
-      border: 1px solid rgba(255, 255, 255, 0.35);
-      border-radius: 999px;
+      width: 22px;
+      height: 36px;
+      border: 1.5px solid rgba(255, 255, 255, 0.35);
+      border-radius: 12px;
     }
 
     .scroll-mouse::before {
       position: absolute;
-      top: 8px;
-      left: 50%;
+      top: 0;
+      left: calc(50% - 2px);
       width: 4px;
       height: 4px;
       content: "";
       border-radius: 50%;
-      background: rgba(255, 255, 255, 0.55);
-      transform: translateX(-50%);
-      animation: scroll-dot 1.7s ease-in-out infinite;
+      background: #ffffff;
+      animation: scroll-dot 1.4s ease-in-out infinite;
     }
 
     .scroll-text {
       writing-mode: vertical-rl;
-      color: var(--text-faint);
-      font-size: 11px;
+      text-orientation: mixed;
+      color: rgba(255, 255, 255, 0.30);
+      font-size: 10px;
       font-weight: 500;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
+      transform: rotate(180deg);
     }
 
     @keyframes scroll-dot {
-      0%,
-      100% {
-        transform: translate(-50%, 0);
-        opacity: 0.25;
+      0% {
+        transform: translateY(4px);
+        opacity: 1;
       }
 
-      45% {
-        transform: translate(-50%, 12px);
-        opacity: 0.9;
+      100% {
+        transform: translateY(14px);
+        opacity: 0;
       }
     }
 
@@ -391,23 +397,23 @@
       width: min(760px, calc(100% - 180px));
       margin: 0 auto;
       overflow: hidden;
-      mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
-      -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+      mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
     }
 
     .marquee-track {
       display: flex;
       width: max-content;
-      gap: 60px;
+      gap: 80px;
       will-change: transform;
       animation: scroll-left 20s linear infinite;
     }
 
     .marquee-track span {
-      color: var(--text-faint);
-      font-size: 13px;
+      color: rgba(255, 255, 255, 0.20);
+      font-size: 12px;
       font-weight: 500;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.25em;
       text-transform: uppercase;
       white-space: nowrap;
     }
@@ -479,15 +485,6 @@
         max-width: 280px;
       }
 
-      .blob-1 {
-        width: 480px;
-        height: 480px;
-      }
-
-      .blob-2 {
-        width: 420px;
-        height: 420px;
-      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -549,23 +546,23 @@
 
     <div class="scroll-indicator" aria-hidden="true">
       <span class="scroll-mouse"></span>
-      <span class="scroll-text">Scroll down</span>
+      <span class="scroll-text">SCROLL DOWN</span>
     </div>
 
     <div class="marquee-wrapper" aria-label="Client logos">
       <div class="marquee-track">
-        <span>Logoipsum</span>
-        <span>Brandmark</span>
-        <span>Stackflo</span>
-        <span>Motionbase</span>
-        <span>Orbit</span>
-        <span>Velox</span>
-        <span>Logoipsum</span>
-        <span>Brandmark</span>
-        <span>Stackflo</span>
-        <span>Motionbase</span>
-        <span>Orbit</span>
-        <span>Velox</span>
+        <span>Logoipsum ·</span>
+        <span>Brandmark ·</span>
+        <span>Stackflo ·</span>
+        <span>Motionbase ·</span>
+        <span>Orbit ·</span>
+        <span>Velox ·</span>
+        <span>Logoipsum ·</span>
+        <span>Brandmark ·</span>
+        <span>Stackflo ·</span>
+        <span>Motionbase ·</span>
+        <span>Orbit ·</span>
+        <span>Velox ·</span>
       </div>
     </div>
   </section>
